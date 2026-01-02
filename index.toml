@@ -1,97 +1,660 @@
-# Lumenaute Skills Index
-# This file is the searchable catalog for community skills
-# Auto-updated by CI when new skills are added
+# Lumenaute Skills Repository Index
+# Auto-generated on 2026-01-02T09:26:15.281212
 
-[metadata]
-version = "1.0"
-last_updated = "2026-01-02T00:00:00Z"
-total_skills = 0
-total_downloads = 0
-
-# Example skill entry (delete this when adding real skills)
-[[skills]]
-name = "example_skill"
-description = "Example skill template - delete when adding real skills"
-tags = ["example", "template"]
-author = "lumenaute"
+[repository]
+name = "Lumenaute Skills"
 version = "1.0.0"
-created = "2026-01-02T00:00:00Z"
-file = "skills/example_skill.luma"
+skill_count = 50
+format_version = "1.0"
 
-# Training provenance
-oracle_model = "claude-sonnet-4"
+# All available skills
+
+[[skills]]
+id = "detect_sql_injection_risks"
+name = "Detect SQL Injection Risks"
+description = "Detect SQL Injection Risks"
+version = "sql"
+author = "claude-sonnet-4"
+tags = ["security", "sql", "injection", "owasp"]
+quality = 0.94
+oracle_model = "claude-sonnet-4-cli"
 target_model = "Llama-3.3-8B-Instruct-128K"
-intent = "example"
+file = "skills/detect_sql_injection_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.29
 
-# Quality metrics
-quality = 0.0
-efficiency = 0.0
-success_rate = 0.0
-usage_count = 0
-downloads = 0
+[[skills]]
+id = "audit_api_security"
+name = "Audit API Security"
+description = "Audit API Security"
+version = "api"
+author = "claude-sonnet-4"
+tags = ["security", "api", "audit", "owasp"]
+quality = 0.93
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/audit_api_security_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 10.69
 
-# File integrity
-hash = "sha256:example"
-size_bytes = 0
+[[skills]]
+id = "debug_docker_containers"
+name = "Debug Docker Containers"
+description = "Debug Docker Containers"
+version = "docker"
+author = "claude-sonnet-4"
+tags = ["docker", "containers", "debugging", "devops"]
+quality = 0.92
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_docker_containers_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.62
 
-# Requirements
-tools = ["bash"]
-dependencies = []
+[[skills]]
+id = "design_database_schema"
+name = "Design Database Schema"
+description = "Design Database Schema"
+version = "database"
+author = "claude-sonnet-4"
+tags = ["database", "schema", "design", "sql"]
+quality = 0.91
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/design_database_schema_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.35
 
-# ============================================
-# Add your skills below using this template:
-# ============================================
+[[skills]]
+id = "debug_python_memory_leaks"
+name = "Debug Python Memory Leaks"
+description = "Debug Python Memory Leaks"
+version = "python"
+author = "claude-sonnet-4"
+tags = ["python", "memory", "debugging", "performance"]
+quality = 0.91
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_python_memory_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.53
 
-# [[skills]]
-# name = "kubernetes_debug"
-# description = "Debug failed Kubernetes pods and containers"
-# tags = ["kubernetes", "devops", "debugging", "containers"]
-# author = "community"
-# version = "1.0.0"
-# created = "2026-01-02T12:00:00Z"
-# file = "skills/kubernetes_debug.luma"
-#
-# oracle_model = "claude-sonnet-4"
-# target_model = "Llama-3.3-8B-Instruct-128K"
-# intent = "debugging"
-#
-# quality = 0.92
-# efficiency = 0.88
-# success_rate = 0.89
-# usage_count = 147
-# downloads = 0
-#
-# hash = "sha256:abc123..."
-# size_bytes = 45231
-#
-# tools = ["bash", "kubectl"]
-# dependencies = []
+[[skills]]
+id = "debug_mlx_model_loading"
+name = "Debug MLX Model Loading"
+description = "Debug MLX Model Loading"
+version = "mlx"
+author = "claude-sonnet-4"
+tags = ["mlx", "machine-learning", "debugging", "inference"]
+quality = 0.9
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_mlx_model_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.77
 
-# ============================================
-# Categories (for organization)
-# ============================================
+[[skills]]
+id = "optimize_postgresql_queries"
+name = "Optimize PostgreSQL Queries"
+description = "Optimize PostgreSQL Queries"
+version = "postgresql"
+author = "claude-sonnet-4"
+tags = ["postgresql", "database", "performance", "sql"]
+quality = 0.9
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/optimize_postgresql_queries_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.31
 
-[categories.devops]
-name = "DevOps"
-description = "Kubernetes, Docker, CI/CD, infrastructure"
-skills = []
+[[skills]]
+id = "implement_jwt_authentication"
+name = "Implement JWT Authentication"
+description = "Implement JWT Authentication"
+version = "jwt"
+author = "claude-sonnet-4"
+tags = ["jwt", "authentication", "security", "web"]
+quality = 0.9
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/implement_jwt_authentication_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.84
 
-[categories.development]
-name = "Development"
-description = "Debugging, Git workflows, testing, code analysis"
-skills = []
+[[skills]]
+id = "debug_async_python_code"
+name = "Debug Async Python Code"
+description = "Debug Async Python Code"
+version = "async"
+author = "claude-sonnet-4"
+tags = ["python", "async", "debugging", "concurrency"]
+quality = 0.89
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_async_python_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.59
 
-[categories.research]
-name = "Research"
-description = "Literature search, paper analysis, data collection"
-skills = []
+[[skills]]
+id = "audit_docker_security"
+name = "Audit Docker Security"
+description = "Audit Docker Security"
+version = "docker"
+author = "claude-sonnet-4"
+tags = ["docker", "security", "containers", "audit"]
+quality = 0.89
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/audit_docker_security_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.83
 
-[categories.sysadmin]
-name = "System Administration"
-description = "Log analysis, performance tuning, monitoring"
-skills = []
+[[skills]]
+id = "optimize_embedding_search"
+name = "Optimize Embedding Search"
+description = "Optimize Embedding Search"
+version = "embedding"
+author = "claude-sonnet-4"
+tags = ["embeddings", "search", "performance", "ml"]
+quality = 0.89
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/optimize_embedding_search_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.18
 
-[categories.security]
-name = "Security"
-description = "Vulnerability scanning, audit, compliance"
-skills = []
+[[skills]]
+id = "write_async_web_scraper"
+name = "Write Async Web Scraper"
+description = "Write Async Web Scraper"
+version = "async"
+author = "claude-sonnet-4"
+tags = ["python", "async", "scraping", "web"]
+quality = 0.88
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/write_async_web_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.4
+
+[[skills]]
+id = "set_up_secrets_management"
+name = "Set Up Secrets Management"
+description = "Set Up Secrets Management"
+version = "up"
+author = "claude-sonnet-4"
+tags = ["secrets", "security", "vault", "credentials"]
+quality = 0.88
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/set_up_secrets_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.79
+
+[[skills]]
+id = "convert_onnx_to_mlx"
+name = "Convert ONNX to MLX"
+description = "Convert ONNX to MLX"
+version = "onnx"
+author = "claude-sonnet-4"
+tags = ["mlx", "onnx", "conversion", "machine-learning"]
+quality = 0.88
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/convert_onnx_to_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.41
+
+[[skills]]
+id = "write_kubernetes_health_checks"
+name = "Write Kubernetes Health Checks"
+description = "Write Kubernetes Health Checks"
+version = "kubernetes"
+author = "claude-sonnet-4"
+tags = ["kubernetes", "k8s", "containers", "monitoring"]
+quality = 0.88
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/write_kubernetes_health_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 7.73
+
+[[skills]]
+id = "configure_load_balancing"
+name = "Configure Load Balancing"
+description = "Configure Load Balancing"
+version = "load"
+author = "claude-sonnet-4"
+tags = ["load-balancing", "networking", "ha", "infrastructure"]
+quality = 0.88
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/configure_load_balancing_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.12
+
+[[skills]]
+id = "debug_model_quantization"
+name = "Debug Model Quantization"
+description = "Debug Model Quantization"
+version = "model"
+author = "claude-sonnet-4"
+tags = ["quantization", "mlx", "debugging", "performance"]
+quality = 0.87
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_model_quantization_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.69
+
+[[skills]]
+id = "configure_https_tls"
+name = "Configure HTTPS/TLS"
+description = "Configure HTTPS/TLS"
+version = "https"
+author = "claude-sonnet-4"
+tags = ["https", "tls", "ssl", "security"]
+quality = 0.87
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/configure_https_tls_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.61
+
+[[skills]]
+id = "debug_network_latency"
+name = "Debug Network Latency"
+description = "Debug Network Latency"
+version = "network"
+author = "claude-sonnet-4"
+tags = ["networking", "latency", "debugging", "performance"]
+quality = 0.87
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_network_latency_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.42
+
+[[skills]]
+id = "optimize_pandas_performance"
+name = "Optimize Pandas Performance"
+description = "Optimize Pandas Performance"
+version = "pandas"
+author = "claude-sonnet-4"
+tags = ["pandas", "python", "performance", "data"]
+quality = 0.87
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/optimize_pandas_performance_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 7.52
+
+[[skills]]
+id = "set_up_github_actions_ci_cd"
+name = "Set Up GitHub Actions CI/CD"
+description = "Set Up GitHub Actions CI/CD"
+version = "up"
+author = "claude-sonnet-4"
+tags = ["ci-cd", "github", "automation", "testing"]
+quality = 0.87
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/set_up_github_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.49
+
+[[skills]]
+id = "write_terraform_infrastructure"
+name = "Write Terraform Infrastructure"
+description = "Write Terraform Infrastructure"
+version = "terraform"
+author = "claude-sonnet-4"
+tags = ["terraform", "iac", "cloud", "devops"]
+quality = 0.86
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/write_terraform_infrastructure_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.09
+
+[[skills]]
+id = "implement_caching_strategy"
+name = "Implement Caching Strategy"
+description = "Implement Caching Strategy"
+version = "caching"
+author = "claude-sonnet-4"
+tags = ["caching", "ml", "performance", "optimization"]
+quality = 0.86
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/implement_caching_strategy_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 10.34
+
+[[skills]]
+id = "configure_systemd_services"
+name = "Configure Systemd Services"
+description = "Configure Systemd Services"
+version = "systemd"
+author = "claude-sonnet-4"
+tags = ["systemd", "linux", "services", "system"]
+quality = 0.86
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/configure_systemd_services_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.43
+
+[[skills]]
+id = "debug_pytest_fixtures"
+name = "Debug Pytest Fixtures"
+description = "Debug Pytest Fixtures"
+version = "pytest"
+author = "claude-sonnet-4"
+tags = ["python", "pytest", "testing", "debugging"]
+quality = 0.86
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_pytest_fixtures_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.16
+
+[[skills]]
+id = "configure_cors_properly"
+name = "Configure CORS Properly"
+description = "Configure CORS Properly"
+version = "cors"
+author = "claude-sonnet-4"
+tags = ["cors", "security", "web", "http"]
+quality = 0.86
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/configure_cors_properly_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.55
+
+[[skills]]
+id = "debug_memory_usage"
+name = "Debug Memory Usage"
+description = "Debug Memory Usage"
+version = "memory"
+author = "claude-sonnet-4"
+tags = ["memory", "system", "debugging", "performance"]
+quality = 0.85
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_memory_usage_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 7.8
+
+[[skills]]
+id = "implement_rate_limiting"
+name = "Implement Rate Limiting"
+description = "Implement Rate Limiting"
+version = "rate"
+author = "claude-sonnet-4"
+tags = ["rate-limiting", "security", "api", "ddos"]
+quality = 0.85
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/implement_rate_limiting_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.5
+
+[[skills]]
+id = "configure_firewall_rules"
+name = "Configure Firewall Rules"
+description = "Configure Firewall Rules"
+version = "firewall"
+author = "claude-sonnet-4"
+tags = ["firewall", "security", "networking", "iptables"]
+quality = 0.85
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/configure_firewall_rules_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.62
+
+[[skills]]
+id = "implement_data_validation"
+name = "Implement Data Validation"
+description = "Implement Data Validation"
+version = "data"
+author = "claude-sonnet-4"
+tags = ["validation", "data", "pydantic", "python"]
+quality = 0.85
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/implement_data_validation_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.78
+
+[[skills]]
+id = "monitor_with_prometheus"
+name = "Monitor with Prometheus"
+description = "Monitor with Prometheus"
+version = "with"
+author = "claude-sonnet-4"
+tags = ["prometheus", "monitoring", "observability", "metrics"]
+quality = 0.85
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/monitor_with_prometheus_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.21
+
+[[skills]]
+id = "implement_retry_logic"
+name = "Implement Retry Logic"
+description = "Implement Retry Logic"
+version = "retry"
+author = "claude-sonnet-4"
+tags = ["python", "retry", "resilience", "api"]
+quality = 0.85
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/implement_retry_logic_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.44
+
+[[skills]]
+id = "configure_nginx_reverse_proxy"
+name = "Configure Nginx Reverse Proxy"
+description = "Configure Nginx Reverse Proxy"
+version = "nginx"
+author = "claude-sonnet-4"
+tags = ["nginx", "networking", "ssl", "web-server"]
+quality = 0.85
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/configure_nginx_reverse_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.06
+
+[[skills]]
+id = "debug_import_errors"
+name = "Debug Import Errors"
+description = "Debug Import Errors"
+version = "import"
+author = "claude-sonnet-4"
+tags = ["python", "imports", "debugging", "modules"]
+quality = 0.84
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_import_errors_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.36
+
+[[skills]]
+id = "debug_ssh_connection_issues"
+name = "Debug SSH Connection Issues"
+description = "Debug SSH Connection Issues"
+version = "ssh"
+author = "claude-sonnet-4"
+tags = ["ssh", "networking", "debugging", "security"]
+quality = 0.84
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_ssh_connection_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.1
+
+[[skills]]
+id = "configure_redis_caching"
+name = "Configure Redis Caching"
+description = "Configure Redis Caching"
+version = "redis"
+author = "claude-sonnet-4"
+tags = ["redis", "caching", "performance", "database"]
+quality = 0.84
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/configure_redis_caching_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.78
+
+[[skills]]
+id = "configure_elasticsearch_indexing"
+name = "Configure Elasticsearch Indexing"
+description = "Configure Elasticsearch Indexing"
+version = "elasticsearch"
+author = "claude-sonnet-4"
+tags = ["elasticsearch", "search", "database", "indexing"]
+quality = 0.84
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/configure_elasticsearch_indexing_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.12
+
+[[skills]]
+id = "implement_context_managers"
+name = "Implement Context Managers"
+description = "Implement Context Managers"
+version = "context"
+author = "claude-sonnet-4"
+tags = ["python", "context-manager", "resources", "cleanup"]
+quality = 0.84
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/implement_context_managers_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 7.93
+
+[[skills]]
+id = "debug_api_rate_limiting"
+name = "Debug API Rate Limiting"
+description = "Debug API Rate Limiting"
+version = "api"
+author = "claude-sonnet-4"
+tags = ["api", "rate-limiting", "web", "performance"]
+quality = 0.83
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/debug_api_rate_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.49
+
+[[skills]]
+id = "optimize_bash_scripts"
+name = "Optimize Bash Scripts"
+description = "Optimize Bash Scripts"
+version = "bash"
+author = "claude-sonnet-4"
+tags = ["bash", "shell", "optimization", "scripting"]
+quality = 0.83
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/optimize_bash_scripts_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.04
+
+[[skills]]
+id = "troubleshoot_dns_issues"
+name = "Troubleshoot DNS Issues"
+description = "Troubleshoot DNS Issues"
+version = "dns"
+author = "claude-sonnet-4"
+tags = ["dns", "networking", "debugging", "infrastructure"]
+quality = 0.83
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/troubleshoot_dns_issues_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.15
+
+[[skills]]
+id = "handle_unicode_properly"
+name = "Handle Unicode Properly"
+description = "Handle Unicode Properly"
+version = "unicode"
+author = "claude-sonnet-4"
+tags = ["python", "unicode", "encoding", "text"]
+quality = 0.83
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/handle_unicode_properly_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 7.48
+
+[[skills]]
+id = "parse_command_line_args"
+name = "Parse Command Line Args"
+description = "Parse Command Line Args"
+version = "command"
+author = "claude-sonnet-4"
+tags = ["python", "cli", "click", "argparse"]
+quality = 0.82
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/parse_command_line_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.45
+
+[[skills]]
+id = "clean_messy_csv_data"
+name = "Clean Messy CSV Data"
+description = "Clean Messy CSV Data"
+version = "messy"
+author = "claude-sonnet-4"
+tags = ["data", "csv", "cleaning", "pandas"]
+quality = 0.82
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/clean_messy_csv_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 9.15
+
+[[skills]]
+id = "optimize_docker_image_size"
+name = "Optimize Docker Image Size"
+description = "Optimize Docker Image Size"
+version = "docker"
+author = "claude-sonnet-4"
+tags = ["docker", "optimization", "containers", "performance"]
+quality = 0.82
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/optimize_docker_image_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 7.37
+
+[[skills]]
+id = "set_up_precommit_hooks"
+name = "Set Up Pre-commit Hooks"
+description = "Set Up Pre-commit Hooks"
+version = "up"
+author = "claude-sonnet-4"
+tags = ["git", "code-quality", "automation", "linting"]
+quality = 0.81
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/set_up_pre_commit_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.1
+
+[[skills]]
+id = "monitor_disk_usage"
+name = "Monitor Disk Usage"
+description = "Monitor Disk Usage"
+version = "disk"
+author = "claude-sonnet-4"
+tags = ["monitoring", "disk", "system", "alerts"]
+quality = 0.81
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/monitor_disk_usage_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.93
+
+[[skills]]
+id = "optimize_list_comprehensions"
+name = "Optimize List Comprehensions"
+description = "Optimize List Comprehensions"
+version = "list"
+author = "claude-sonnet-4"
+tags = ["python", "optimization", "performance", "list-comp"]
+quality = 0.81
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/optimize_list_comprehensions_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 7.59
+
+[[skills]]
+id = "set_up_log_rotation"
+name = "Set Up Log Rotation"
+description = "Set Up Log Rotation"
+version = "up"
+author = "claude-sonnet-4"
+tags = ["logs", "system", "rotation", "maintenance"]
+quality = 0.8
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/set_up_log_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.21
+
+[[skills]]
+id = "parse_json_logs"
+name = "Parse JSON Logs"
+description = "Parse JSON Logs"
+version = "json"
+author = "claude-sonnet-4"
+tags = ["json", "logs", "parsing", "data"]
+quality = 0.8
+oracle_model = "claude-sonnet-4-cli"
+target_model = "Llama-3.3-8B-Instruct-128K"
+file = "skills/parse_json_logs_1.0.0_llama_8b_unknown_d2048.luma"
+size_kb = 8.76
