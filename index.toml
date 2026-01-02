@@ -1,0 +1,97 @@
+# Lumenaute Skills Index
+# This file is the searchable catalog for community skills
+# Auto-updated by CI when new skills are added
+
+[metadata]
+version = "1.0"
+last_updated = "2026-01-02T00:00:00Z"
+total_skills = 0
+total_downloads = 0
+
+# Example skill entry (delete this when adding real skills)
+[[skills]]
+name = "example_skill"
+description = "Example skill template - delete when adding real skills"
+tags = ["example", "template"]
+author = "lumenaute"
+version = "1.0.0"
+created = "2026-01-02T00:00:00Z"
+file = "skills/example_skill.luma"
+
+# Training provenance
+oracle_model = "claude-sonnet-4"
+target_model = "Llama-3.3-8B-Instruct-128K"
+intent = "example"
+
+# Quality metrics
+quality = 0.0
+efficiency = 0.0
+success_rate = 0.0
+usage_count = 0
+downloads = 0
+
+# File integrity
+hash = "sha256:example"
+size_bytes = 0
+
+# Requirements
+tools = ["bash"]
+dependencies = []
+
+# ============================================
+# Add your skills below using this template:
+# ============================================
+
+# [[skills]]
+# name = "kubernetes_debug"
+# description = "Debug failed Kubernetes pods and containers"
+# tags = ["kubernetes", "devops", "debugging", "containers"]
+# author = "community"
+# version = "1.0.0"
+# created = "2026-01-02T12:00:00Z"
+# file = "skills/kubernetes_debug.luma"
+#
+# oracle_model = "claude-sonnet-4"
+# target_model = "Llama-3.3-8B-Instruct-128K"
+# intent = "debugging"
+#
+# quality = 0.92
+# efficiency = 0.88
+# success_rate = 0.89
+# usage_count = 147
+# downloads = 0
+#
+# hash = "sha256:abc123..."
+# size_bytes = 45231
+#
+# tools = ["bash", "kubectl"]
+# dependencies = []
+
+# ============================================
+# Categories (for organization)
+# ============================================
+
+[categories.devops]
+name = "DevOps"
+description = "Kubernetes, Docker, CI/CD, infrastructure"
+skills = []
+
+[categories.development]
+name = "Development"
+description = "Debugging, Git workflows, testing, code analysis"
+skills = []
+
+[categories.research]
+name = "Research"
+description = "Literature search, paper analysis, data collection"
+skills = []
+
+[categories.sysadmin]
+name = "System Administration"
+description = "Log analysis, performance tuning, monitoring"
+skills = []
+
+[categories.security]
+name = "Security"
+description = "Vulnerability scanning, audit, compliance"
+skills = []

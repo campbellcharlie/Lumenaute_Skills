@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Extracted skills (for inspection)
+*.extracted/
+tmp/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Don't commit test/broken skills
+*.broken.luma
+*.test.luma

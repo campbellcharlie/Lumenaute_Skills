@@ -1,0 +1,109 @@
+name: Validate Skills
+
+on:
+  pull_request:
+    paths:
+      - 'skills/**'
+      - 'index.toml'
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - 'index.toml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install tomli
+
+      - name: Validate index.toml
+        run: |
+          python3 << 'EOF'
+          import tomllib
+          from pathlib import Path
+
+          # Load and validate index
+          with open('index.toml', 'rb') as f:
+              index = tomllib.load(f)
+
+          print(f"✓ index.toml is valid TOML")
+          print(f"✓ Found {len(index.get('skills', []))} skills")
+
+          # Validate each skill entry
+          for skill in index.get('skills', []):
+              name = skill.get('name', 'unknown')
+              file_path = Path(skill.get('file', ''))
+
+              # Check required fields
+              required = ['name', 'description', 'tags', 'author', 'version', 'file']
+              for field in required:
+                  if field not in skill:
+                      raise ValueError(f"Skill '{name}' missing required field: {field}")
+
+              # Check file exists
+              if not file_path.exists():
+                  raise FileNotFoundError(f"Skill '{name}' file not found: {file_path}")
+
+              # Check file size
+              size = file_path.stat().st_size
+              if size > 10 * 1024 * 1024:  # 10MB limit
+                  raise ValueError(f"Skill '{name}' exceeds 10MB size limit")
+
+              print(f"✓ Validated: {name}")
+
+          print("\n✅ All skills validated successfully!")
+          EOF
+
+      - name: Check for duplicates
+        run: |
+          python3 << 'EOF'
+          import tomllib
+
+          with open('index.toml', 'rb') as f:
+              index = tomllib.load(f)
+
+          names = [s['name'] for s in index.get('skills', [])]
+          if len(names) != len(set(names)):
+              duplicates = [n for n in names if names.count(n) > 1]
+              raise ValueError(f"Duplicate skill names found: {duplicates}")
+
+          print("✓ No duplicate skill names")
+          EOF
+
+      - name: Validate skill files
+        run: |
+          python3 << 'EOF'
+          import tarfile
+          import tomllib
+          from pathlib import Path
+
+          with open('index.toml', 'rb') as f:
+              index = tomllib.load(f)
+
+          for skill in index.get('skills', []):
+              file_path = Path(skill.get('file', ''))
+              if not file_path.exists():
+                  continue
+
+              # Validate tarball structure
+              with tarfile.open(file_path, 'r:gz') as tar:
+                  members = tar.getnames()
+
+                  # Check for recipe.toml
+                  has_recipe = any('recipe.toml' in m for m in members)
+                  if not has_recipe:
+                      raise ValueError(f"{file_path.name} missing recipe.toml")
+
+                  print(f"✓ Valid .luma structure: {file_path.name}")
+          EOF
