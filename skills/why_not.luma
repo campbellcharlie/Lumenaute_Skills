@@ -1,0 +1,72 @@
+# Why-Not — Security Finding Validation
+
+A validation technique for triaging security findings (from scanners, pentests, or LLM code review). Instead of a binary "vuln / not a vuln," it forces every finding into one of three grounded verdicts — and, critically, never lets "I couldn't tell" masquerade as "safe."
+
+## Why it fits security triage
+
+Security triage is fundamentally a "prove it's exploitable, prove it's mitigated, or admit you can't tell" problem. Scanners (and confabulating LLMs) collapse the third case into false confidence — reporting "no vuln" both when there's a real mitigation *and* when the data flow simply wasn't traced. That second case is how real vulnerabilities get closed.
+
+The three verdicts:
+
+- **CONFIRMED** — a traced path from an attacker-controlled source to the dangerous sink, with no mitigation in between (the "provably yes").
+- **REFUTED** — a specific control that covers *every* reachable path (the "provably no").
+- **UNKNOWN** — can't establish either; a named missing premise (the "insufficient info").
+
+## The discipline that does the work
+
+**UNKNOWN ≠ safe.** The verdict may only be REFUTED when the agent can name a specific control at an exact file:line and argue it covers all paths. Any inferred-but-unread mitigation is UNKNOWN, not REFUTED. Every verdict is grounded in cited code, and each carries a one-step "how to falsify this verdict" check a reviewer can run.
+
+This makes the agent's reasoning *auditable and falsifiable*, not automatically *correct* — it can still wrongly claim a mitigation, but now the claim names the exact control to check, and it can't hide "I didn't trace it" behind "safe." Use it to **validate/triage** findings, not as the sole detector.
+
+## Prompt
+
+```
+You are validating security findings. Your job is NOT to agree with the finding — it is to
+determine, with evidence from the actual code, whether it is exploitable. Default stance:
+assume each finding is REAL and try to PROVE exploitability; only downgrade it if you can
+point to a specific control in the code that makes it safe.
+
+Classify each finding into exactly ONE verdict:
+
+1. CONFIRMED — you traced a concrete path from an attacker-controlled source to the dangerous
+   sink with no mitigating control in between.
+   Give: the full data-flow path (source → … → sink) with file:line at each hop, the exact
+   quoted code, and a minimal proof-of-concept / trigger condition.
+
+2. REFUTED (not exploitable) — you can name a SPECIFIC control that neutralizes it on EVERY
+   reachable path (parameterized query, output encoding, server-side validation, sink not
+   reachable, or input not attacker-controlled).
+   Give: the exact file:line + quoted code of that control, and an argument it covers ALL
+   paths to the sink — not just the obvious one.
+
+3. UNKNOWN (insufficient evidence) — you can neither trace an exploit nor prove a control
+   covers all paths.
+   Give: the EXACT missing premise(s) as concrete checkable questions (e.g. "Is route X
+   reachable without auth?", "What sanitizer runs at Y?", "Is req.body.z attacker-controlled?")
+   and the specific artifact you'd need (route table, middleware, ORM config, etc.).
+
+HARD RULES:
+- UNKNOWN is NOT "safe." Never return REFUTED unless you can name a specific control and show
+  it covers every path. If you are INFERRING a mitigation you did not actually read in the
+  code, the verdict is UNKNOWN, not REFUTED.
+- Ground every claim in exact file:line + quoted code. No "likely/probably/appears" without a
+  citation.
+- Trace the real data flow; do not judge by the sink alone. A dangerous function fed
+  attacker-uncontrolled input is REFUTED; a safe-looking one fed tainted data may be CONFIRMED.
+- Prefer UNKNOWN over a guess. A wrong REFUTED (false-safe) is the worst outcome — it closes a
+  real vulnerability.
+
+For EACH finding, output:
+- Finding: <id / title>
+- Verdict: CONFIRMED | REFUTED | UNKNOWN
+- Evidence: <the traced path, OR the control, OR the missing premises> — with file:line + quoted code
+- Confidence: high | med | low
+- How to falsify this verdict: <the single check that would flip it>
+
+Findings to validate:
+<PASTE FINDINGS HERE — and make sure I have read access to the relevant code/repo>
+```
+
+## Usage
+
+Give the agent read access to the codebase, paste the findings after the prompt, and run. The line doing the real work is *"UNKNOWN is NOT safe … if you're inferring a mitigation you didn't read, it's UNKNOWN"* — it stops the agent from confabulating a clean bill of health.
